@@ -80,8 +80,7 @@ attr_accessor :matrix, :fil, :col						# define una variable matrix, fil, col y 
 	#== Metodo suma Densa
 	def +(other)
 		
-		#if ((other.class.to_s == "Matriznyj::Densa") && (other.fil == @fil) && (other.col == @col))
-		if ((other.class.to_s == "Densa") && (other.fil == @fil) && (other.col == @col))
+		if (((other.class.to_s == "Matriznyj::Densa") && (other.fil == @fil) && (other.col == @col)) || ((other.class.to_s == "Densa") && (other.fil == @fil) && (other.col == @col)))
 								
 			0.upto(@fil - 1) do |i| 
 				j = 0									
@@ -133,7 +132,7 @@ attr_accessor :matrix, :fil, :col						# define una variable matrix, fil, col y 
 	#== Metodo resta Densa
 	def -(other)
 		
-		if ((other.class.to_s == "Matriznyj::Densa") && (other.fil == @fil) && (other.col == @col))
+		if (((other.class.to_s == "Matriznyj::Densa") && (other.fil == @fil) && (other.col == @col)) || ((other.class.to_s == "Densa") && (other.fil == @fil) && (other.col == @col)))
 				
 			0.upto(@fil - 1) do |i|				
 				0.upto(@col - 1) do |j|					
@@ -604,14 +603,14 @@ end
 
 
 
-ejemplo = MatrixDSL.new("Densa","Densa") do
-operacion "+"  
+ejemplo = MatrixDSL.new("Densa","Dispersa")
+ejemplo.operacion "+"  
 
-operando [[1,2],[3,4]]  
-operando [[1,1],[1,1]]  
-end
+ejemplo.operando [[1,2],[3,4]]  
+ejemplo.operando [[0,0],[1,0]]  
 
-puts ejemplo
+
+#puts ejemplo
 
 
 
