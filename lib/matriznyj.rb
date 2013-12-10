@@ -582,12 +582,12 @@ class MatrixDSL
 		
 		if(@matrix1 != "0" && @matrix2 == "0")
 			@matrix1 = @opcion1.to_s << ".new(" << @fil.to_s << "," << @col.to_s << "," << @matrix1.to_s << ")"
-			puts "matriz1: #{@matrix1}"
+			puts "matriz 1: #{@matrix1}"
 		end
 		
 		if(@matrix1 != "0" && @matrix2 != "0")
 			@matrix2 = @opcion2.to_s << ".new(" << @fil.to_s << "," << @col.to_s << "," << @matrix2.to_s << ")"
-			puts "matriz2: #{@matrix2}"
+			puts "matriz 2: #{@matrix2}"
 			
 			resultado = @matrix1.to_s << "." << @oper.to_s << "(" << @matrix2.to_s << ")"
 			resultado = Array.new(eval(resultado))
@@ -602,15 +602,6 @@ end
 #end		# -module Matriznyj-
 
 
-
-ejemplo = MatrixDSL.new("Densa","Dispersa")
-ejemplo.operacion "+"  
-
-ejemplo.operando [[1,2],[3,4]]  
-ejemplo.operando [[0,0],[1,0]]  
-
-
-#puts ejemplo
 
 
 
