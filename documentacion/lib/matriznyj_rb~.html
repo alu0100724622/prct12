@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>matriznyj.rb~ - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="../Guardfile.html">Guardfile</a>
+  
+    <li class="file"><a href="../README_txt.html">README</a>
+  
+    <li class="file"><a href="../Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="../documentacion/created_rid.html">created.rid</a>
+  
+    <li class="file"><a href="../lib/matriznyj_rb~.html">matriznyj.rb~</a>
+  
+    <li class="file"><a href="../matriznyj_gemspec.html">matriznyj.gemspec</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Fraccion.html">Fraccion</a>
+  
+    <li><a href="../Matriznyj.html">Matriznyj</a>
+  
+    <li><a href="../Matriznyj/Densa.html">Matriznyj::Densa</a>
+  
+    <li><a href="../Matriznyj/Dispersa.html">Matriznyj::Dispersa</a>
+  
+    <li><a href="../Matriznyj/MatrixDSL.html">Matriznyj::MatrixDSL</a>
+  
+    <li><a href="../Matriznyj/Matriz.html">Matriznyj::Matriz</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../Test_Matriz_Densa.html">Test_Matriz_Densa</a>
+  
+    <li><a href="../Test_Matriz_Dispersa.html">Test_Matriz_Dispersa</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<p>require “matriznyj/version”</p>
+
+<p>require “./fraccion.rb”</p>
+
+<p># = ejemplo_rdoc.rb #</p>
+<dl class="rdoc-list note-list"><dt>#Autor
+<dd>
+<p>Noelia Rodriguez Martin y Juan Manuel Ramos Perez</p>
+</dd></dl>
+
+<p># # == Matriz## Descripcion: # - Definición de la clase Matriz y sus
+heredadas Densa y Dispersa # - Se Establecen las relaciones de herencia
+anteriormente expresadas # # - <strong>rdoc</strong></p>
+
+<p>module <a href="../Matriznyj.html">Matriznyj</a></p>
+
+<p># CLASE MATRIZ (ABSTRACTA)</p>
+
+<p># Clase Matriz class Matriz</p>
+
+<p>end</p>
+
+<p># CLASE MATRIZ DENSA</p>
+
+<p>#= Clase Densa class Densa &lt; Matriz</p>
+
+<p>attr_accessor :matrix, :fil, :col                                          
+# define una variable matrix, fil, col y realiza por defecto</p>
+
+<pre class="ruby">                                                                                                        <span class="ruby-comment"># un set y un get de dicha variable</span>
+
+<span class="ruby-comment">#== Inicializacion Densa</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">filas</span>, <span class="ruby-identifier">columnas</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+
+        <span class="ruby-ivar">@fil</span> = <span class="ruby-identifier">filas</span>
+        <span class="ruby-ivar">@col</span> = <span class="ruby-identifier">columnas</span>
+        <span class="ruby-ivar">@numCeldas</span> = <span class="ruby-ivar">@fil</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@col</span>
+        <span class="ruby-ivar">@matrix</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@fil</span>) {<span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@col</span>)}             <span class="ruby-comment"># variable de instancia al accessor matrix que se hizo previamente</span>
+
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+                <span class="ruby-identifier">to_s</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+        <span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment">#== Paso a string Densa</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">!=</span> <span class="ruby-ivar">@numCeldas</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Numero incorrecto de elementos&quot;</span>
+        <span class="ruby-keyword">else</span>
+
+                <span class="ruby-identifier">numEle</span> = <span class="ruby-value">0</span>
+                <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
+
+                <span class="ruby-keyword">while</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@fil</span>
+
+                        <span class="ruby-identifier">j</span> = <span class="ruby-value">0</span>
+
+                        <span class="ruby-keyword">while</span> <span class="ruby-identifier">j</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@col</span>
+
+                                <span class="ruby-ivar">@matrix</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] = <span class="ruby-identifier">args</span>[<span class="ruby-identifier">numEle</span>]
+                                <span class="ruby-identifier">numEle</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                                <span class="ruby-identifier">j</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+
+                        <span class="ruby-keyword">end</span>
+                        <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+
+                <span class="ruby-keyword">end</span>
+
+                <span class="ruby-keyword">return</span> <span class="ruby-ivar">@matrix</span>
+
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment">#== Metodo suma Densa</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">+</span>(<span class="ruby-identifier">other</span>)
+
+        <span class="ruby-keyword">if</span> (((<span class="ruby-identifier">other</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;Matriznyj::Densa&quot;</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">other</span>.<span class="ruby-identifier">fil</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@fil</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">other</span>.<span class="ruby-identifier">col</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@col</span>)) <span class="ruby-operator">||</span> ((<span class="ruby-identifier">other</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;Densa&quot;</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">other</span>.<span class="ruby-identifier">fil</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@fil</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">other</span>.<span class="ruby-identifier">col</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@col</span>)))
+
+                <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-ivar">@fil</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> 
+                        <span class="ruby-identifier">j</span> = <span class="ruby-value">0</span>                                                                   
+                        <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-ivar">@col</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span>
+
+                                <span class="ruby-ivar">@matrix</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] = <span class="ruby-ivar">@matrix</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">matrix</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>]
+
+                        <span class="ruby-keyword">end</span>
+
+                <span class="ruby-keyword">end</span>
+
+                <span class="ruby-comment">#puts &quot;#{@matrix}&quot;</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-ivar">@matrix</span>
+
+        <span class="ruby-keyword">else</span>
+
+                <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>                                                           
+
+                <span class="ruby-keyword">while</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@fil</span>                                          
+
+                        <span class="ruby-identifier">j</span> = <span class="ruby-value">0</span>
+
+                        <span class="ruby-keyword">while</span> <span class="ruby-identifier">j</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@col</span>                                  
+
+                                <span class="ruby-identifier">k</span> = <span class="ruby-value">0</span>
+
+                                <span class="ruby-keyword">while</span> <span class="ruby-identifier">k</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">numElementos</span>
+
+                                        <span class="ruby-keyword">if</span> (<span class="ruby-identifier">i</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">filM</span>[<span class="ruby-identifier">k</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">j</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">colM</span>[<span class="ruby-identifier">k</span>])
+
+                                                <span class="ruby-ivar">@matrix</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] = <span class="ruby-ivar">@matrix</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">eleM</span>[<span class="ruby-identifier">k</span>]
+
+                                        <span class="ruby-keyword">end</span>
+
+                                        <span class="ruby-identifier">k</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                                <span class="ruby-keyword">end</span>
+
+                                <span class="ruby-identifier">j</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                        <span class="ruby-keyword">end</span>
+
+                        <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                <span class="ruby-keyword">end</span>
+
+                <span class="ruby-comment">#puts &quot;#{@matrix}&quot;</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-ivar">@matrix</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment">#== Metodo resta Densa</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">-</span>(<span class="ruby-identifier">other</span>)
+
+        <span class="ruby-keyword">if</span> (((<span class="ruby-identifier">other</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;Matriznyj::Densa&quot;</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">other</span>.<span class="ruby-identifier">fil</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@fil</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">other</span>.<span class="ruby-identifier">col</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@col</span>)) <span class="ruby-operator">||</span> ((<span class="ruby-identifier">other</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;Densa&quot;</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">other</span>.<span class="ruby-identifier">fil</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@fil</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">other</span>.<span class="ruby-identifier">col</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@col</span>)))
+
+                <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-ivar">@fil</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>                         
+                        <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-ivar">@col</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span>                                 
+                                <span class="ruby-ivar">@matrix</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] = <span class="ruby-ivar">@matrix</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">matrix</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>]                                      
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+
+                <span class="ruby-comment">#puts &quot;#{@matrix}&quot;</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-ivar">@matrix</span>
+
+        <span class="ruby-keyword">else</span>
+
+                <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>                                                           
+
+                <span class="ruby-keyword">while</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@fil</span>                                          
+
+                        <span class="ruby-identifier">j</span> = <span class="ruby-value">0</span>
+
+                        <span class="ruby-keyword">while</span> <span class="ruby-identifier">j</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@col</span>                                  
+
+                                <span class="ruby-identifier">k</span> = <span class="ruby-value">0</span>
+
+                                <span class="ruby-keyword">while</span> <span class="ruby-identifier">k</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">numElementos</span>
+
+                                        <span class="ruby-keyword">if</span> (<span class="ruby-identifier">i</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">filM</span>[<span class="ruby-identifier">k</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">j</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">colM</span>[<span class="ruby-identifier">k</span>])
+
+                                                <span class="ruby-ivar">@matrix</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] = <span class="ruby-ivar">@matrix</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">eleM</span>[<span class="ruby-identifier">k</span>]
+
+                                        <span class="ruby-keyword">end</span>
+
+                                        <span class="ruby-identifier">k</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                                <span class="ruby-keyword">end</span>
+
+                                <span class="ruby-identifier">j</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                        <span class="ruby-keyword">end</span>
+
+                        <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                <span class="ruby-keyword">end</span>
+
+                <span class="ruby-comment">#puts &quot;#{@matrix}&quot;</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-ivar">@matrix</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment">#== Metodo producto Densa</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">*</span>(<span class="ruby-identifier">other</span>)
+
+        <span class="ruby-comment">#if ((other.class.to_s == &quot;Densa&quot;) &amp;&amp; (@fil == @col) &amp;&amp; (other.fil == other.col) &amp;&amp; (@fil == other.fil))</span>
+
+                <span class="ruby-identifier">matrizMult</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@fil</span>) {<span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@col</span>)}
+
+                <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
+                (<span class="ruby-value">0</span><span class="ruby-operator">..</span>(<span class="ruby-ivar">@fil</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>)).<span class="ruby-identifier">collect</span> {
+
+                        <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-ivar">@col</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span>
+
+                                <span class="ruby-identifier">matrizMult</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] = <span class="ruby-value">0</span>            
+
+                                <span class="ruby-identifier">k</span> = <span class="ruby-value">0</span>                                   
+                                <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-ivar">@col</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span> 
+
+                                        <span class="ruby-identifier">matrizMult</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] = <span class="ruby-identifier">matrizMult</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] <span class="ruby-operator">+</span> (<span class="ruby-ivar">@matrix</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">k</span>] <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">matrix</span>[<span class="ruby-identifier">k</span>][<span class="ruby-identifier">j</span>])
+
+                                <span class="ruby-keyword">end</span>
+
+                        <span class="ruby-keyword">end</span>
+                        <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>  
+                }
+
+                <span class="ruby-comment">#puts &quot;#{matrizMult}&quot;</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-identifier">matrizMult</span>
+
+        <span class="ruby-comment">#else</span>
+                <span class="ruby-comment">#raise ArgumentError, &quot;Numero distinto de filas y columnas&quot;</span>
+        <span class="ruby-comment">#end</span>
+
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment">#== Metodo minimo Densa</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">minimo</span>
+
+        <span class="ruby-identifier">min</span> = <span class="ruby-ivar">@matrix</span>[<span class="ruby-value">0</span>][<span class="ruby-value">0</span>]
+
+        <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
+</pre>
+
+<p>#               while i &lt; @fil</p>
+
+<pre>(@fil).times do
+
+        j = 0</pre>
+
+<p>#                       while j &lt; @col</p>
+
+<pre class="ruby">                (<span class="ruby-ivar">@col</span>).<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span>
+
+                        <span class="ruby-keyword">if</span>(<span class="ruby-ivar">@matrix</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>] <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">min</span>)
+
+                                <span class="ruby-identifier">min</span> = <span class="ruby-ivar">@matrix</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>]
+
+                        <span class="ruby-keyword">end</span>
+
+                        <span class="ruby-identifier">j</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+
+                <span class="ruby-keyword">end</span>
+
+                <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-comment">#puts &quot;minimo: #{min}&quot;</span>
+
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">min</span>
+
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment">#== Metodo maximo Densa</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">maximo</span>
+
+        <span class="ruby-identifier">max</span> = <span class="ruby-ivar">@matrix</span>[<span class="ruby-value">0</span>][<span class="ruby-value">0</span>]
+
+        <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
+</pre>
+
+<p>#               while i &lt; @fil</p>
+
+<pre>(@fil).times do                 
+        j = 0</pre>
+
+<p>#                       while j &lt; @col</p>
+
+<pre>                (@col).times do                         
+                        if(@matrix[i][j] &gt; max)
+
+                                max = @matrix[i][j]
+
+                        end
+
+                        j += 1
+
+                end
+
+                i += 1
+
+        end
+
+        #puts &quot;maximo: #{max}&quot;
+
+        return max
+
+end</pre>
+
+<p>end</p>
+
+<p># CLASE MATRIZ DISPERSA</p>
+
+<p>#= Clase Dispersa  class Dispersa &lt; Matriz</p>
+
+<pre class="ruby"><span class="ruby-identifier">attr_accessor</span> :<span class="ruby-identifier">matrix</span>, :<span class="ruby-identifier">fil</span>, :<span class="ruby-identifier">col</span>, :<span class="ruby-identifier">eleM</span>, :<span class="ruby-identifier">filM</span>, :<span class="ruby-identifier">colM</span>, :<span class="ruby-identifier">numElementos</span>
+
+<span class="ruby-comment">#== Inicializacion Dispersa </span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">filas</span>, <span class="ruby-identifier">columnas</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+
+        <span class="ruby-ivar">@fil</span> = <span class="ruby-identifier">filas</span>
+        <span class="ruby-ivar">@col</span> = <span class="ruby-identifier">columnas</span>
+        <span class="ruby-ivar">@numCeldas</span> = <span class="ruby-ivar">@fil</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@col</span>
+        <span class="ruby-ivar">@numElementos</span> = <span class="ruby-value">0</span>                                                                                       <span class="ruby-comment"># numero de elementos NO NULOS de la matriz</span>
+
+        <span class="ruby-ivar">@eleM</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>)                                                                            <span class="ruby-comment"># matriz con los elementos no nulos de matrix</span>
+        <span class="ruby-ivar">@filM</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>)                                                                            <span class="ruby-comment"># matriz con los numeros de fila asociado</span>
+        <span class="ruby-ivar">@colM</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>)                                                                            <span class="ruby-comment"># matriz con los numeros de columna asociado</span>
+
+        <span class="ruby-comment">#------------- COMPROBAR ELEMENTOS NO NULOS DE LA MATRIZ QUE SE HA PASADO -------------------</span>
+
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Numero incorrecto de elementos&quot;</span>
+        <span class="ruby-keyword">else</span>
+
+                <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
+                <span class="ruby-identifier">numElem</span> = <span class="ruby-value">0</span>                                                                                                     <span class="ruby-comment"># numero de elementos de la matriz</span>
+
+                <span class="ruby-keyword">while</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">length</span>
+
+                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>[<span class="ruby-identifier">i</span>] <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+
+                                <span class="ruby-ivar">@eleM</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">args</span>[<span class="ruby-identifier">i</span>])
+                                <span class="ruby-identifier">calcularFilCol</span>(<span class="ruby-identifier">numElem</span>)
+                                <span class="ruby-ivar">@numElementos</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+
+                        <span class="ruby-keyword">end</span>
+
+                        <span class="ruby-identifier">numElem</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                        <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-comment">#------------------------------------------------------------------------------------------------</span>
+
+        <span class="ruby-comment">#puts &quot;eleM: #{@eleM}&quot;</span>
+        <span class="ruby-comment">#puts &quot;filM: #{@filM}&quot;</span>
+        <span class="ruby-comment">#puts &quot;colM: #{@colM}&quot;</span>
+        <span class="ruby-comment">#puts &quot;numEl: #{@numElementos}&quot;</span>
+
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment">#== Metodo calular fila - columna Dispersa</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">calcularFilCol</span>(<span class="ruby-identifier">numElem</span>)
+
+        <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
+        <span class="ruby-identifier">num</span> = <span class="ruby-value">0</span>
+
+        <span class="ruby-keyword">while</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@fil</span>
+
+                <span class="ruby-identifier">j</span> = <span class="ruby-value">0</span>
+
+                <span class="ruby-keyword">while</span> <span class="ruby-identifier">j</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@col</span>
+
+                        <span class="ruby-keyword">if</span> (<span class="ruby-identifier">num</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">numElem</span>)
+
+                                <span class="ruby-ivar">@filM</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">i</span>)
+                                <span class="ruby-ivar">@colM</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">j</span>)
+
+                        <span class="ruby-keyword">end</span>
+
+                        <span class="ruby-identifier">num</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                        <span class="ruby-identifier">j</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+
+                <span class="ruby-keyword">end</span>
+
+                <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+
+        <span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment">#== Metodo minimo Dispersa</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">minimo</span>
+
+        <span class="ruby-identifier">min</span> = <span class="ruby-value">0</span>
+
+        <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
+
+        <span class="ruby-keyword">while</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@numElementos</span>                                         
+
+                <span class="ruby-keyword">if</span>(<span class="ruby-ivar">@eleM</span>[<span class="ruby-identifier">i</span>] <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">min</span>)
+
+                        <span class="ruby-identifier">min</span> = <span class="ruby-ivar">@eleM</span>[<span class="ruby-identifier">i</span>]
+
+                <span class="ruby-keyword">end</span>
+
+                <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-comment">#puts &quot;minimo: #{min}&quot;</span>
+
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">min</span>
+
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment">#== Metodo maximo Dispersa</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">maximo</span>
+
+        <span class="ruby-identifier">max</span> = <span class="ruby-value">0</span>
+
+        <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
+
+        <span class="ruby-keyword">while</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@numElementos</span>                                         
+
+                <span class="ruby-keyword">if</span>(<span class="ruby-ivar">@eleM</span>[<span class="ruby-identifier">i</span>] <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">max</span>)
+
+                        <span class="ruby-identifier">max</span> = <span class="ruby-ivar">@eleM</span>[<span class="ruby-identifier">i</span>]
+
+                <span class="ruby-keyword">end</span>
+
+                <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-comment">#puts &quot;maximo: #{max}&quot;</span>
+
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">max</span>
+
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment">#== Paso a string Dispersa</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
+
+        <span class="ruby-identifier">matrizMuestra</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@fil</span>) {<span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@col</span>) {<span class="ruby-value">0</span>}}
+
+        <span class="ruby-identifier">numEle</span> = <span class="ruby-value">0</span>
+        <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
+
+        <span class="ruby-keyword">while</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@numElementos</span>                                         
+
+                <span class="ruby-identifier">matrizMuestra</span>[<span class="ruby-ivar">@filM</span>[<span class="ruby-identifier">i</span>]][<span class="ruby-ivar">@colM</span>[<span class="ruby-identifier">i</span>]] = <span class="ruby-ivar">@eleM</span>[<span class="ruby-identifier">i</span>]
+
+                <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-comment">#puts &quot;muestra = #{matrizMuestra}&quot;</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">matrizMuestra</span>
+
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment">#== Metodo suma Dispersa</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">+</span>(<span class="ruby-identifier">other</span>)
+
+        <span class="ruby-comment">#if ((other.class.to_s == &quot;Dispersa&quot;) &amp;&amp; (other.fil == @fil) &amp;&amp; (other.col == @col))</span>
+
+                <span class="ruby-identifier">matrizSuma</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@fil</span>) {<span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@col</span>) {<span class="ruby-value">0</span>}}
+
+                <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-ivar">@numElementos</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+
+                        <span class="ruby-identifier">matrizSuma</span>[<span class="ruby-ivar">@filM</span>[<span class="ruby-identifier">i</span>]][<span class="ruby-ivar">@colM</span>[<span class="ruby-identifier">i</span>]] = <span class="ruby-ivar">@eleM</span>[<span class="ruby-identifier">i</span>]
+
+                <span class="ruby-keyword">end</span>
+
+                <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">other</span>.<span class="ruby-identifier">numElementos</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>                           
+
+                        <span class="ruby-identifier">matrizSuma</span>[<span class="ruby-identifier">other</span>.<span class="ruby-identifier">filM</span>[<span class="ruby-identifier">i</span>]][<span class="ruby-identifier">other</span>.<span class="ruby-identifier">colM</span>[<span class="ruby-identifier">i</span>]] <span class="ruby-operator">+=</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">eleM</span>[<span class="ruby-identifier">i</span>]
+
+                <span class="ruby-keyword">end</span>
+
+                <span class="ruby-comment">#puts &quot;suma = #{matrizSuma}&quot;</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-identifier">matrizSuma</span>
+
+        <span class="ruby-comment">#else</span>
+                <span class="ruby-comment">#raise ArgumentError, &quot;Matrices de distinto tamanio&quot;</span>
+        <span class="ruby-comment">#end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment">#== Metodo resta Dispersa</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">-</span>(<span class="ruby-identifier">other</span>)
+
+        <span class="ruby-comment">#if ((other.class.to_s == &quot;Dispersa&quot;) &amp;&amp; (other.fil == @fil) &amp;&amp; (other.col == @col))</span>
+
+                <span class="ruby-identifier">matrizResta</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@fil</span>) {<span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@col</span>) {<span class="ruby-value">0</span>}}
+
+                <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
+
+                <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">other</span>.<span class="ruby-identifier">numElementos</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+
+                        <span class="ruby-identifier">matrizResta</span>[<span class="ruby-identifier">other</span>.<span class="ruby-identifier">filM</span>[<span class="ruby-identifier">i</span>]][<span class="ruby-identifier">other</span>.<span class="ruby-identifier">colM</span>[<span class="ruby-identifier">i</span>]] = <span class="ruby-value">0</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">eleM</span>[<span class="ruby-identifier">i</span>]
+
+                <span class="ruby-keyword">end</span>
+
+                <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
+
+                <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-ivar">@numElementos</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+
+                        <span class="ruby-identifier">matrizResta</span>[<span class="ruby-ivar">@filM</span>[<span class="ruby-identifier">i</span>]][<span class="ruby-ivar">@colM</span>[<span class="ruby-identifier">i</span>]] <span class="ruby-operator">+=</span> <span class="ruby-ivar">@eleM</span>[<span class="ruby-identifier">i</span>] 
+
+                <span class="ruby-keyword">end</span>
+
+                <span class="ruby-comment">#puts &quot;resta = #{matrizResta}&quot;</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-identifier">matrizResta</span>
+
+        <span class="ruby-comment">#else</span>
+                <span class="ruby-comment">#raise ArgumentError, &quot;Matrices de distinto tamanio&quot;</span>
+        <span class="ruby-comment">#end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment">#== Metodo producto Dispersa</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">*</span>(<span class="ruby-identifier">other</span>)
+
+        <span class="ruby-comment">#if ((other.class.to_s == &quot;Dispersa&quot;) &amp;&amp; (other.fil == @fil) &amp;&amp; (other.col == @col))</span>
+
+                <span class="ruby-identifier">matrizProd</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@fil</span>) {<span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@col</span>) {<span class="ruby-value">0</span>}}                      
+
+                <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">other</span>.<span class="ruby-identifier">numElementos</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+
+                        <span class="ruby-keyword">if</span> (<span class="ruby-identifier">other</span>.<span class="ruby-identifier">filM</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-ivar">@colM</span>[<span class="ruby-identifier">i</span>])
+                                <span class="ruby-identifier">matrizProd</span>[<span class="ruby-ivar">@filM</span>[<span class="ruby-identifier">i</span>]][<span class="ruby-ivar">@colM</span>[<span class="ruby-identifier">i</span>]] <span class="ruby-operator">+=</span> <span class="ruby-ivar">@eleM</span>[<span class="ruby-identifier">i</span>] <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">eleM</span>[<span class="ruby-identifier">i</span>]
+                        <span class="ruby-keyword">end</span>
+
+                <span class="ruby-keyword">end</span>                     
+
+                <span class="ruby-comment">#puts &quot;prod = #{matrizProd}&quot;</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-identifier">matrizProd</span>
+
+        <span class="ruby-comment">#else</span>
+                <span class="ruby-comment">#raise ArgumentError, &quot;Matrices de distinto tamanio&quot;</span>
+        <span class="ruby-comment">#end</span>
+
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>end</p>
+
+<p>class MatrixDSL</p>
+
+<pre class="ruby"><span class="ruby-identifier">attr_accessor</span> :<span class="ruby-identifier">matrix1</span>, :<span class="ruby-identifier">matrix2</span>, :<span class="ruby-identifier">vis</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">op1</span>, <span class="ruby-identifier">op2</span>)
+
+        <span class="ruby-ivar">@opcion1</span> = <span class="ruby-identifier">op1</span>
+        <span class="ruby-ivar">@opcion2</span> = <span class="ruby-identifier">op2</span>
+        <span class="ruby-ivar">@matrix1</span> = <span class="ruby-string">&quot;0&quot;</span>
+        <span class="ruby-ivar">@matrix2</span> = <span class="ruby-string">&quot;0&quot;</span>
+
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">operacion</span>(<span class="ruby-identifier">oper</span>)
+
+        <span class="ruby-ivar">@oper</span> = <span class="ruby-identifier">oper</span>
+
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">operando</span>(<span class="ruby-identifier">other</span>)
+
+        <span class="ruby-identifier">mat</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">other</span>)
+
+        <span class="ruby-ivar">@fil</span> = <span class="ruby-identifier">mat</span>.<span class="ruby-identifier">length</span>
+        <span class="ruby-ivar">@col</span> = <span class="ruby-identifier">mat</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">length</span>
+        <span class="ruby-identifier">elementos</span> = <span class="ruby-keyword">nil</span>
+
+        <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-ivar">@fil</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> 
+
+                <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-ivar">@col</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span>
+
+                        <span class="ruby-keyword">if</span>((<span class="ruby-identifier">i</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@fil</span> <span class="ruby-operator">-</span><span class="ruby-value">1</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">j</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@col</span> <span class="ruby-operator">-</span><span class="ruby-value">1</span>))
+                                <span class="ruby-identifier">elementos</span> = <span class="ruby-identifier">elementos</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">mat</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">to_s</span>
+                        <span class="ruby-keyword">else</span>
+                                <span class="ruby-identifier">elementos</span> = <span class="ruby-identifier">elementos</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">mat</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;,&quot;</span>
+                        <span class="ruby-keyword">end</span>
+
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">if</span>(<span class="ruby-ivar">@matrix1</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;0&quot;</span>)
+                <span class="ruby-ivar">@matrix1</span> = <span class="ruby-identifier">elementos</span>
+
+                <span class="ruby-ivar">@vis</span> = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot; &quot;</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@oper</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot; &quot;</span>
+
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-ivar">@matrix2</span> = <span class="ruby-identifier">elementos</span>
+
+                <span class="ruby-ivar">@vis</span> = <span class="ruby-ivar">@vis</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot; = &quot;</span>
+
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-identifier">ejecutar</span>
+
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ejecutar</span>
+
+        <span class="ruby-keyword">if</span>(<span class="ruby-ivar">@matrix1</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;0&quot;</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@matrix2</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;0&quot;</span>)
+                <span class="ruby-ivar">@matrix1</span> = <span class="ruby-ivar">@opcion1</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;.new(&quot;</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@fil</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;,&quot;</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@col</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;,&quot;</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@matrix1</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;)&quot;</span>
+                <span class="ruby-comment">#puts &quot;matriz 1: #{@matrix1}&quot;</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">if</span>(<span class="ruby-ivar">@matrix1</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;0&quot;</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@matrix2</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;0&quot;</span>)
+                <span class="ruby-ivar">@matrix2</span> = <span class="ruby-ivar">@opcion2</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;.new(&quot;</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@fil</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;,&quot;</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@col</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;,&quot;</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@matrix2</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;)&quot;</span>
+                <span class="ruby-comment">#puts &quot;matriz 2: #{@matrix2}&quot;</span>
+
+                <span class="ruby-identifier">resultado</span> = <span class="ruby-ivar">@matrix1</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;.&quot;</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@oper</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;(&quot;</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@matrix2</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;)&quot;</span>
+                <span class="ruby-identifier">resultado</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">eval</span>(<span class="ruby-identifier">resultado</span>))
+                <span class="ruby-comment">#puts &quot;resultado: #{resultado}&quot;</span>
+
+                <span class="ruby-ivar">@vis</span> = <span class="ruby-ivar">@vis</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">resultado</span>.<span class="ruby-identifier">to_s</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;----------------------------------------------------&quot;</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-ivar">@vis</span>                       
+
+        <span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>end</p>
+
+<p>end             # -module Matriznyj-</p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.1.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

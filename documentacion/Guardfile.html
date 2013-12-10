@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>class Object - RDoc Documentation</title>
+<title>Guardfile - RDoc Documentation</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -20,7 +20,7 @@
 <script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
 
 
-<body id="top" class="class">
+<body class="file">
 <nav id="metadata">
   <nav id="home-section" class="section">
   <h3 class="section-header">
@@ -44,56 +44,6 @@
 
 
   
-
-  <div id="file-metadata">
-    <nav id="file-list-section" class="section">
-  <h3 class="section-header">Defined In</h3>
-  <ul>
-    <li>lib/m.rb
-    <li>lib/mcd.rb
-    <li>spec/tddMatriz_spec.rb
-    <li>test/tc_matriz.rb
-  </ul>
-</nav>
-
-    
-  </div>
-
-  <div id="class-metadata">
-    
-    <nav id="parent-class-section" class="section">
-  <h3 class="section-header">Parent</h3>
-  
-  <p class="link">
-  
-</nav>
-
-    <!-- Included Modules -->
-<nav id="includes-section" class="section">
-  <h3 class="section-header">Included Modules</h3>
-
-  <ul class="link-list">
-  
-  
-    <li><a class="include" href="Matriznyj.html">Matriznyj</a>
-  
-  
-  </ul>
-</nav>
-
-    
-    <!-- Method Quickref -->
-<nav id="method-list-section" class="section">
-  <h3 class="section-header">Methods</h3>
-
-  <ul class="link-list">
-    
-    <li ><a href="#method-i-mcd">#mcd</a>
-    
-  </ul>
-</nav>
-
-  </div>
 
   <div id="project-metadata">
     <nav id="fileindex-section" class="section project-section">
@@ -147,73 +97,35 @@
   </div>
 </nav>
 
-<div id="documentation">
-  <h1 class="class">class Object</h1>
-
-  <div id="description" class="description">
-    
-  </div><!-- description -->
-
+<div id="documentation" class="description">
   
-  
-  
-  <section id="5Buntitled-5D" class="documentation-section">
-    
+<p>#Guardfile</p>
 
-    
+<p>guard ‘bundler’ do</p>
 
-    
+<pre>watch('Gemfile')</pre>
 
-    
+<p>end</p>
 
-    <!-- Methods -->
-    
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Instance Methods</h3>
+<p>guard ‘rspec’, :version =&gt; 2 do</p>
 
-    
-      <div id="method-i-mcd" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">mcd</span><span
-            class="method-args">(u, v)</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
+<pre class="ruby"><span class="ruby-identifier">watch</span>(<span class="ruby-regexp">%r{^spec/.+_spec\.rb$}</span>)
+<span class="ruby-identifier">watch</span>(<span class="ruby-regexp">%r{^lib/(.+)\.rb$}</span>)     { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;spec/#{m[1]}_spec.rb&quot;</span> }
+<span class="ruby-identifier">watch</span>(<span class="ruby-string">'spec/spec_helper.rb'</span>)  { <span class="ruby-string">&quot;spec&quot;</span> }
+</pre>
 
-        <div class="method-description">
-          
-          <p>MAXIMO COMUN DIVISOR</p>
-          
-          
+<p>end</p>
 
-          
-          <div class="method-source-code" id="mcd-source">
-            <pre><span class="ruby-comment"># File lib/mcd.rb, line 3</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">mcd</span>(<span class="ruby-identifier">u</span>, <span class="ruby-identifier">v</span>)
-  <span class="ruby-identifier">u</span>, <span class="ruby-identifier">v</span> = <span class="ruby-identifier">u</span>.<span class="ruby-identifier">abs</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">abs</span>
-  <span class="ruby-keyword">while</span> <span class="ruby-identifier">v</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
-    <span class="ruby-identifier">u</span>, <span class="ruby-identifier">v</span> = <span class="ruby-identifier">v</span>, <span class="ruby-identifier">u</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">v</span>
-  <span class="ruby-keyword">end</span>
-  <span class="ruby-identifier">u</span>
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- mcd-source -->
-          
-        </div>
+<p>guard ‘test’, :version =&gt; 2 do</p>
 
-        
+<pre class="ruby"><span class="ruby-identifier">watch</span>(<span class="ruby-regexp">%r{^test/.+\.rb$}</span>)
+<span class="ruby-identifier">watch</span>(<span class="ruby-regexp">%r{^lib/(.+)\.rb$}</span>)     { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;test/#{m[1]}.rb&quot;</span> }
+</pre>
 
-        
-      </div><!-- mcd-method -->
+<p>end</p>
 
-    
-    </section><!-- public-instance-method-details -->
-  
-  </section><!-- 5Buntitled-5D -->
+</div>
 
-</div><!-- documentation -->
 
 
 <footer id="validator-badges">

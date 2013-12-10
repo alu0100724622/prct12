@@ -49,7 +49,7 @@
     <nav id="file-list-section" class="section">
   <h3 class="section-header">Defined In</h3>
   <ul>
-    <li>tc_matriz.rb
+    <li>test/tc_matriz.rb
   </ul>
 </nav>
 
@@ -96,11 +96,19 @@
 
   <ul>
   
+    <li class="file"><a href="./Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="./Guardfile.html">Guardfile</a>
+  
+    <li class="file"><a href="./README_txt.html">README</a>
+  
+    <li class="file"><a href="./Rakefile.html">Rakefile</a>
+  
     <li class="file"><a href="./documentacion/created_rid.html">created.rid</a>
   
-    <li class="file"><a href="./matriznyj_rb~.html">matriznyj.rb~</a>
+    <li class="file"><a href="./lib/matriznyj_rb~.html">matriznyj.rb~</a>
   
-    <li class="file"><a href="./tddMatriz_spec_rb~.html">tddMatriz_spec.rb~</a>
+    <li class="file"><a href="./matriznyj_gemspec.html">matriznyj.gemspec</a>
   
   </ul>
 </nav>
@@ -117,6 +125,8 @@
     <li><a href="./Matriznyj/Densa.html">Matriznyj::Densa</a>
   
     <li><a href="./Matriznyj/Dispersa.html">Matriznyj::Dispersa</a>
+  
+    <li><a href="./Matriznyj/MatrixDSL.html">Matriznyj::MatrixDSL</a>
   
     <li><a href="./Matriznyj/Matriz.html">Matriznyj::Matriz</a>
   
@@ -176,7 +186,7 @@
 
           
           <div class="method-source-code" id="maximo-source">
-            <pre><span class="ruby-comment"># File tc_matriz.rb, line 52</span>
+            <pre><span class="ruby-comment"># File test/tc_matriz.rb, line 50</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">maximo</span>
         
         <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">10</span>, <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">10</span>,<span class="ruby-value">4</span>,<span class="ruby-value">2</span>,<span class="ruby-value">7</span>).<span class="ruby-identifier">maximo</span>)
@@ -211,7 +221,7 @@
 
           
           <div class="method-source-code" id="minimo-source">
-            <pre><span class="ruby-comment"># File tc_matriz.rb, line 46</span>
+            <pre><span class="ruby-comment"># File test/tc_matriz.rb, line 44</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">minimo</span>
         
         <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">1</span>, <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">7</span>,<span class="ruby-value">1</span>,<span class="ruby-value">8</span>).<span class="ruby-identifier">minimo</span>)
@@ -246,12 +256,12 @@
 
           
           <div class="method-source-code" id="test_mostrar-source">
-            <pre><span class="ruby-comment"># File tc_matriz.rb, line 10</span>
+            <pre><span class="ruby-comment"># File test/tc_matriz.rb, line 10</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_mostrar</span>
 
-        <span class="ruby-identifier">assert</span>([[<span class="ruby-value">1</span>, <span class="ruby-value">2</span>],[<span class="ruby-value">3</span>, <span class="ruby-value">4</span>]] <span class="ruby-operator">==</span> <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>).<span class="ruby-identifier">to_s</span>(<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>))                               <span class="ruby-comment"># |</span>
-        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">0</span>, [[<span class="ruby-value">1</span>, <span class="ruby-value">2</span>],[<span class="ruby-value">3</span>, <span class="ruby-value">4</span>]] <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>).<span class="ruby-identifier">to_s</span>(<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>))     <span class="ruby-comment"># 3 formas distintas de hacer lo mismo</span>
-        <span class="ruby-identifier">assert_equal</span>([[<span class="ruby-value">1</span>, <span class="ruby-value">2</span>],[<span class="ruby-value">3</span>, <span class="ruby-value">4</span>]], <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>).<span class="ruby-identifier">to_s</span>(<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>))                   <span class="ruby-comment"># |</span>
+        <span class="ruby-identifier">assert</span>([[<span class="ruby-value">1</span>, <span class="ruby-value">2</span>],[<span class="ruby-value">3</span>, <span class="ruby-value">4</span>]] <span class="ruby-operator">==</span> <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>).<span class="ruby-identifier">to_s</span>(<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>))                               <span class="ruby-comment"># |</span>
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">0</span>, [[<span class="ruby-value">1</span>, <span class="ruby-value">2</span>],[<span class="ruby-value">3</span>, <span class="ruby-value">4</span>]] <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>).<span class="ruby-identifier">to_s</span>(<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>))     <span class="ruby-comment"># 3 formas distintas de hacer lo mismo</span>
+        <span class="ruby-identifier">assert_equal</span>([[<span class="ruby-value">1</span>, <span class="ruby-value">2</span>],[<span class="ruby-value">3</span>, <span class="ruby-value">4</span>]], <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>).<span class="ruby-identifier">to_s</span>(<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>))                   <span class="ruby-comment"># |</span>
         
         <span class="ruby-identifier">assert_equal</span>([[<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>], [<span class="ruby-value">4</span>, <span class="ruby-value">5</span>, <span class="ruby-value">6</span>], [<span class="ruby-value">7</span>, <span class="ruby-value">8</span>, <span class="ruby-value">9</span>]], <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>,<span class="ruby-value">3</span>).<span class="ruby-identifier">to_s</span>(<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>,<span class="ruby-value">5</span>,<span class="ruby-value">6</span>,<span class="ruby-value">7</span>,<span class="ruby-value">8</span>,<span class="ruby-value">9</span>))
         
@@ -285,7 +295,7 @@
 
           
           <div class="method-source-code" id="test_multiplicacion-source">
-            <pre><span class="ruby-comment"># File tc_matriz.rb, line 38</span>
+            <pre><span class="ruby-comment"># File test/tc_matriz.rb, line 36</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_multiplicacion</span>
         <span class="ruby-identifier">assert_equal</span>([[<span class="ruby-value">7</span>, <span class="ruby-value">10</span>],[<span class="ruby-value">15</span>, <span class="ruby-value">22</span>]], <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>).<span class="ruby-operator">*</span>(<span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>)))
         <span class="ruby-identifier">assert_equal</span>([[<span class="ruby-value">30</span>, <span class="ruby-value">36</span>, <span class="ruby-value">42</span>],[<span class="ruby-value">66</span>, <span class="ruby-value">81</span>, <span class="ruby-value">96</span>], [<span class="ruby-value">102</span>, <span class="ruby-value">126</span>, <span class="ruby-value">150</span>]], <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>,<span class="ruby-value">3</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>,<span class="ruby-value">5</span>,<span class="ruby-value">6</span>,<span class="ruby-value">7</span>,<span class="ruby-value">8</span>,<span class="ruby-value">9</span>).<span class="ruby-operator">*</span>(<span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>,<span class="ruby-value">3</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>,<span class="ruby-value">5</span>,<span class="ruby-value">6</span>,<span class="ruby-value">7</span>,<span class="ruby-value">8</span>,<span class="ruby-value">9</span>)))
@@ -322,9 +332,9 @@
 
           
           <div class="method-source-code" id="test_resta-source">
-            <pre><span class="ruby-comment"># File tc_matriz.rb, line 29</span>
+            <pre><span class="ruby-comment"># File test/tc_matriz.rb, line 27</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_resta</span>
-        <span class="ruby-identifier">assert_equal</span>([[<span class="ruby-value">0</span>, <span class="ruby-value">0</span>],[<span class="ruby-value">0</span>, <span class="ruby-value">0</span>]], <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>).<span class="ruby-operator">-</span>(<span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>)))
+        <span class="ruby-identifier">assert_equal</span>([[<span class="ruby-value">1</span>, <span class="ruby-value">2</span>],[<span class="ruby-value">3</span>, <span class="ruby-value">8</span>]], <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>).<span class="ruby-operator">-</span>(<span class="ruby-constant">Dispersa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">0</span>,<span class="ruby-value">0</span>,<span class="ruby-value">0</span>,<span class="ruby-value">-4</span>)))
         <span class="ruby-identifier">assert_equal</span>([[<span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>],[<span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>], [<span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>]], <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>,<span class="ruby-value">3</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>,<span class="ruby-value">5</span>,<span class="ruby-value">6</span>,<span class="ruby-value">7</span>,<span class="ruby-value">8</span>,<span class="ruby-value">9</span>).<span class="ruby-operator">-</span>(<span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>,<span class="ruby-value">3</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>,<span class="ruby-value">5</span>,<span class="ruby-value">6</span>,<span class="ruby-value">7</span>,<span class="ruby-value">8</span>,<span class="ruby-value">9</span>)))
         
         <span class="ruby-identifier">assert_equal</span>([[<span class="ruby-value">0</span>, <span class="ruby-value">1</span>],[<span class="ruby-value">2</span>, <span class="ruby-value">3</span>]], <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>).<span class="ruby-operator">-</span>(<span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>)))
@@ -359,13 +369,11 @@
 
           
           <div class="method-source-code" id="test_suma-source">
-            <pre><span class="ruby-comment"># File tc_matriz.rb, line 20</span>
+            <pre><span class="ruby-comment"># File test/tc_matriz.rb, line 20</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_suma</span>
-        <span class="ruby-identifier">assert_equal</span>([[<span class="ruby-value">2</span>, <span class="ruby-value">4</span>],[<span class="ruby-value">6</span>, <span class="ruby-value">8</span>]], <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>).<span class="ruby-operator">+</span>(<span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>)))
-        <span class="ruby-identifier">assert_equal</span>([[<span class="ruby-value">2</span>, <span class="ruby-value">4</span>, <span class="ruby-value">6</span>],[<span class="ruby-value">8</span>, <span class="ruby-value">10</span>, <span class="ruby-value">12</span>], [<span class="ruby-value">14</span>, <span class="ruby-value">16</span>, <span class="ruby-value">18</span>]], <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>,<span class="ruby-value">3</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>,<span class="ruby-value">5</span>,<span class="ruby-value">6</span>,<span class="ruby-value">7</span>,<span class="ruby-value">8</span>,<span class="ruby-value">9</span>).<span class="ruby-operator">+</span>(<span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>,<span class="ruby-value">3</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>,<span class="ruby-value">5</span>,<span class="ruby-value">6</span>,<span class="ruby-value">7</span>,<span class="ruby-value">8</span>,<span class="ruby-value">9</span>)))
-        
+        <span class="ruby-identifier">assert_equal</span>([[<span class="ruby-value">1</span>, <span class="ruby-value">3</span>],[<span class="ruby-value">3</span>, <span class="ruby-value">6</span>]], <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>).<span class="ruby-operator">+</span>(<span class="ruby-constant">Dispersa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">0</span>,<span class="ruby-value">1</span>,<span class="ruby-value">0</span>,<span class="ruby-value">2</span>)))
         <span class="ruby-identifier">assert_equal</span>([[<span class="ruby-value">2</span>, <span class="ruby-value">3</span>],[<span class="ruby-value">4</span>, <span class="ruby-value">5</span>]], <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>).<span class="ruby-operator">+</span>(<span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>)))
-        <span class="ruby-identifier">assert_equal</span>([[<span class="ruby-value">2</span>, <span class="ruby-value">3</span>, <span class="ruby-value">4</span>],[<span class="ruby-value">5</span>, <span class="ruby-value">6</span>, <span class="ruby-value">7</span>], [<span class="ruby-value">8</span>, <span class="ruby-value">9</span>, <span class="ruby-value">10</span>]], <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>,<span class="ruby-value">3</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>,<span class="ruby-value">5</span>,<span class="ruby-value">6</span>,<span class="ruby-value">7</span>,<span class="ruby-value">8</span>,<span class="ruby-value">9</span>).<span class="ruby-operator">+</span>(<span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>,<span class="ruby-value">3</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>)))
+
 <span class="ruby-keyword">end</span></pre>
           </div><!-- test_suma-source -->
           

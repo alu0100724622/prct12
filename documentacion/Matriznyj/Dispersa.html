@@ -49,7 +49,7 @@
     <nav id="file-list-section" class="section">
   <h3 class="section-header">Defined In</h3>
   <ul>
-    <li>matriznyj.rb
+    <li>lib/matriznyj.rb
   </ul>
 </nav>
 
@@ -100,11 +100,19 @@
 
   <ul>
   
+    <li class="file"><a href="../Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="../Guardfile.html">Guardfile</a>
+  
+    <li class="file"><a href="../README_txt.html">README</a>
+  
+    <li class="file"><a href="../Rakefile.html">Rakefile</a>
+  
     <li class="file"><a href="../documentacion/created_rid.html">created.rid</a>
   
-    <li class="file"><a href="../matriznyj_rb~.html">matriznyj.rb~</a>
+    <li class="file"><a href="../lib/matriznyj_rb~.html">matriznyj.rb~</a>
   
-    <li class="file"><a href="../tddMatriz_spec_rb~.html">tddMatriz_spec.rb~</a>
+    <li class="file"><a href="../matriznyj_gemspec.html">matriznyj.gemspec</a>
   
   </ul>
 </nav>
@@ -121,6 +129,8 @@
     <li><a href="../Matriznyj/Densa.html">Matriznyj::Densa</a>
   
     <li><a href="../Matriznyj/Dispersa.html">Matriznyj::Dispersa</a>
+  
+    <li><a href="../Matriznyj/MatrixDSL.html">Matriznyj::MatrixDSL</a>
   
     <li><a href="../Matriznyj/Matriz.html">Matriznyj::Matriz</a>
   
@@ -280,13 +290,13 @@
 
           
           <div class="method-source-code" id="2A-source">
-            <pre><span class="ruby-comment"># File matriznyj.rb, line 448</span>
+            <pre><span class="ruby-comment"># File lib/matriznyj.rb, line 501</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">*</span>(<span class="ruby-identifier">other</span>)
-
-        <span class="ruby-comment">#if ((other.class.to_s == &quot;Dispersa&quot;) &amp;&amp; (other.fil == @fil) &amp;&amp; (other.col == @col))</span>
+        
+        <span class="ruby-comment">#if ((other.class.to_s == &quot;Dispersa&quot;) &amp;&amp; (other.fil == @fil) &amp;&amp; (other.col == @col))</span>
                 
                 <span class="ruby-identifier">matrizProd</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@fil</span>) {<span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@col</span>) {<span class="ruby-value">0</span>}}                   
-
+                
                 <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">other</span>.<span class="ruby-identifier">numElementos</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
 
                         <span class="ruby-keyword">if</span> (<span class="ruby-identifier">other</span>.<span class="ruby-identifier">filM</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-ivar">@colM</span>[<span class="ruby-identifier">i</span>])
@@ -295,12 +305,12 @@
 
                 <span class="ruby-keyword">end</span>                  
                 
-                <span class="ruby-comment">#puts &quot;prod = #{matrizProd}&quot;</span>
+                <span class="ruby-comment">#puts &quot;prod = #{matrizProd}&quot;</span>
                 <span class="ruby-keyword">return</span> <span class="ruby-identifier">matrizProd</span>
                 
-        <span class="ruby-comment">#else</span>
-                <span class="ruby-comment">#raise ArgumentError, &quot;Matrices de distinto tamanio&quot;</span>
-        <span class="ruby-comment">#end</span>
+        <span class="ruby-comment">#else</span>
+                <span class="ruby-comment">#raise ArgumentError, &quot;Matrices de distinto tamanio&quot;</span>
+        <span class="ruby-comment">#end</span>
         
 <span class="ruby-keyword">end</span></pre>
           </div><!-- 2A-source -->
@@ -332,10 +342,10 @@
 
           
           <div class="method-source-code" id="2B-source">
-            <pre><span class="ruby-comment"># File matriznyj.rb, line 386</span>
+            <pre><span class="ruby-comment"># File lib/matriznyj.rb, line 441</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">+</span>(<span class="ruby-identifier">other</span>)
         
-        <span class="ruby-comment">#if ((other.class.to_s == &quot;Dispersa&quot;) &amp;&amp; (other.fil == @fil) &amp;&amp; (other.col == @col))</span>
+        <span class="ruby-comment">#if ((other.class.to_s == &quot;Dispersa&quot;) &amp;&amp; (other.fil == @fil) &amp;&amp; (other.col == @col))</span>
                 
                 <span class="ruby-identifier">matrizSuma</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@fil</span>) {<span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@col</span>) {<span class="ruby-value">0</span>}}
                 
@@ -352,12 +362,12 @@
                 <span class="ruby-keyword">end</span>
                 
                 
-                <span class="ruby-comment">#puts &quot;suma = #{matrizSuma}&quot;</span>
+                <span class="ruby-comment">#puts &quot;suma = #{matrizSuma}&quot;</span>
                 <span class="ruby-keyword">return</span> <span class="ruby-identifier">matrizSuma</span>
                 
-        <span class="ruby-comment">#else</span>
-                <span class="ruby-comment">#raise ArgumentError, &quot;Matrices de distinto tamanio&quot;</span>
-        <span class="ruby-comment">#end</span>
+        <span class="ruby-comment">#else</span>
+                <span class="ruby-comment">#raise ArgumentError, &quot;Matrices de distinto tamanio&quot;</span>
+        <span class="ruby-comment">#end</span>
 <span class="ruby-keyword">end</span></pre>
           </div><!-- 2B-source -->
           
@@ -388,38 +398,36 @@
 
           
           <div class="method-source-code" id="2D-source">
-            <pre><span class="ruby-comment"># File matriznyj.rb, line 414</span>
+            <pre><span class="ruby-comment"># File lib/matriznyj.rb, line 469</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">-</span>(<span class="ruby-identifier">other</span>)
         
-        <span class="ruby-comment">#if ((other.class.to_s == &quot;Dispersa&quot;) &amp;&amp; (other.fil == @fil) &amp;&amp; (other.col == @col))</span>
+        <span class="ruby-comment">#if ((other.class.to_s == &quot;Dispersa&quot;) &amp;&amp; (other.fil == @fil) &amp;&amp; (other.col == @col))</span>
                 
                 <span class="ruby-identifier">matrizResta</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@fil</span>) {<span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@col</span>) {<span class="ruby-value">0</span>}}
                 
                 <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
                 
-                (<span class="ruby-identifier">other</span>.<span class="ruby-identifier">numElementos</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>).<span class="ruby-identifier">times</span> {
+                <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">other</span>.<span class="ruby-identifier">numElementos</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
                         
                         <span class="ruby-identifier">matrizResta</span>[<span class="ruby-identifier">other</span>.<span class="ruby-identifier">filM</span>[<span class="ruby-identifier">i</span>]][<span class="ruby-identifier">other</span>.<span class="ruby-identifier">colM</span>[<span class="ruby-identifier">i</span>]] = <span class="ruby-value">0</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">eleM</span>[<span class="ruby-identifier">i</span>]
                         
-                        <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
-                }
+                <span class="ruby-keyword">end</span>
                 
                 
                 <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
                 
-                (<span class="ruby-ivar">@numElementos</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>).<span class="ruby-identifier">times</span> {
+                <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-ivar">@numElementos</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
                         
                         <span class="ruby-identifier">matrizResta</span>[<span class="ruby-ivar">@filM</span>[<span class="ruby-identifier">i</span>]][<span class="ruby-ivar">@colM</span>[<span class="ruby-identifier">i</span>]] <span class="ruby-operator">+=</span> <span class="ruby-ivar">@eleM</span>[<span class="ruby-identifier">i</span>] 
                         
-                        <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
-                }
+                <span class="ruby-keyword">end</span>
                         
-                <span class="ruby-comment">#puts &quot;resta = #{matrizResta}&quot;</span>
+                <span class="ruby-comment">#puts &quot;resta = #{matrizResta}&quot;</span>
                 <span class="ruby-keyword">return</span> <span class="ruby-identifier">matrizResta</span>
                 
-        <span class="ruby-comment">#else</span>
-                <span class="ruby-comment">#raise ArgumentError, &quot;Matrices de distinto tamanio&quot;</span>
-        <span class="ruby-comment">#end</span>
+        <span class="ruby-comment">#else</span>
+                <span class="ruby-comment">#raise ArgumentError, &quot;Matrices de distinto tamanio&quot;</span>
+        <span class="ruby-comment">#end</span>
 <span class="ruby-keyword">end</span></pre>
           </div><!-- 2D-source -->
           
@@ -450,7 +458,7 @@
 
           
           <div class="method-source-code" id="calcularFilCol-source">
-            <pre><span class="ruby-comment"># File matriznyj.rb, line 288</span>
+            <pre><span class="ruby-comment"># File lib/matriznyj.rb, line 343</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">calcularFilCol</span>(<span class="ruby-identifier">numElem</span>)
         
         <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
@@ -508,7 +516,7 @@
 
           
           <div class="method-source-code" id="maximo-source">
-            <pre><span class="ruby-comment"># File matriznyj.rb, line 342</span>
+            <pre><span class="ruby-comment"># File lib/matriznyj.rb, line 397</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">maximo</span>
         
         <span class="ruby-identifier">max</span> = <span class="ruby-value">0</span>
@@ -526,7 +534,7 @@
                 <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
         <span class="ruby-keyword">end</span>
         
-        <span class="ruby-comment">#puts &quot;maximo: #{max}&quot;</span>
+        <span class="ruby-comment">#puts &quot;maximo: #{max}&quot;</span>
         
         <span class="ruby-keyword">return</span> <span class="ruby-identifier">max</span>
         
@@ -560,7 +568,7 @@
 
           
           <div class="method-source-code" id="minimo-source">
-            <pre><span class="ruby-comment"># File matriznyj.rb, line 318</span>
+            <pre><span class="ruby-comment"># File lib/matriznyj.rb, line 373</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">minimo</span>
         
         <span class="ruby-identifier">min</span> = <span class="ruby-value">0</span>
@@ -578,7 +586,7 @@
                 <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
         <span class="ruby-keyword">end</span>
         
-        <span class="ruby-comment">#puts &quot;minimo: #{min}&quot;</span>
+        <span class="ruby-comment">#puts &quot;minimo: #{min}&quot;</span>
         
         <span class="ruby-keyword">return</span> <span class="ruby-identifier">min</span>
         
@@ -612,7 +620,7 @@
 
           
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File matriznyj.rb, line 366</span>
+            <pre><span class="ruby-comment"># File lib/matriznyj.rb, line 421</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
         
         <span class="ruby-identifier">matrizMuestra</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@fil</span>) {<span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@col</span>) {<span class="ruby-value">0</span>}}
@@ -627,7 +635,7 @@
                 <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
         <span class="ruby-keyword">end</span>
         
-        <span class="ruby-comment">#puts &quot;muestra = #{matrizMuestra}&quot;</span>
+        <span class="ruby-comment">#puts &quot;muestra = #{matrizMuestra}&quot;</span>
         <span class="ruby-keyword">return</span> <span class="ruby-identifier">matrizMuestra</span>
         
 <span class="ruby-keyword">end</span></pre>
@@ -666,28 +674,28 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File matriznyj.rb, line 238</span>
+            <pre><span class="ruby-comment"># File lib/matriznyj.rb, line 293</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">filas</span>, <span class="ruby-identifier">columnas</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
         
         <span class="ruby-ivar">@fil</span> = <span class="ruby-identifier">filas</span>
         <span class="ruby-ivar">@col</span> = <span class="ruby-identifier">columnas</span>
         <span class="ruby-ivar">@numCeldas</span> = <span class="ruby-ivar">@fil</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@col</span>
-        <span class="ruby-ivar">@numElementos</span> = <span class="ruby-value">0</span>                                                                                     <span class="ruby-comment"># numero de elementos NO NULOS de la matriz</span>
+        <span class="ruby-ivar">@numElementos</span> = <span class="ruby-value">0</span>                                                                                     <span class="ruby-comment"># numero de elementos NO NULOS de la matriz</span>
         
-        <span class="ruby-ivar">@eleM</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>)                                                                          <span class="ruby-comment"># matriz con los elementos no nulos de matrix</span>
-        <span class="ruby-ivar">@filM</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>)                                                                          <span class="ruby-comment"># matriz con los numeros de fila asociado</span>
-        <span class="ruby-ivar">@colM</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>)                                                                          <span class="ruby-comment"># matriz con los numeros de columna asociado</span>
+        <span class="ruby-ivar">@eleM</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>)                                                                          <span class="ruby-comment"># matriz con los elementos no nulos de matrix</span>
+        <span class="ruby-ivar">@filM</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>)                                                                          <span class="ruby-comment"># matriz con los numeros de fila asociado</span>
+        <span class="ruby-ivar">@colM</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>)                                                                          <span class="ruby-comment"># matriz con los numeros de columna asociado</span>
         
         
         
-        <span class="ruby-comment">#------------- COMPROBAR ELEMENTOS NO NULOS DE LA MATRIZ QUE SE HA PASADO -------------------</span>
+        <span class="ruby-comment">#------------- COMPROBAR ELEMENTOS NO NULOS DE LA MATRIZ QUE SE HA PASADO -------------------</span>
         
         <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
                 <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Numero incorrecto de elementos&quot;</span>
         <span class="ruby-keyword">else</span>
                 
                 <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
-                <span class="ruby-identifier">numElem</span> = <span class="ruby-value">0</span>                                                                                                  <span class="ruby-comment"># numero de elementos de la matriz</span>
+                <span class="ruby-identifier">numElem</span> = <span class="ruby-value">0</span>                                                                                                  <span class="ruby-comment"># numero de elementos de la matriz</span>
                 
                 <span class="ruby-keyword">while</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">length</span>
                         
@@ -705,13 +713,13 @@
                 
         <span class="ruby-keyword">end</span>
         
-        <span class="ruby-comment">#------------------------------------------------------------------------------------------------</span>
+        <span class="ruby-comment">#------------------------------------------------------------------------------------------------</span>
         
         
-        <span class="ruby-comment">#puts &quot;eleM: #{@eleM}&quot;</span>
-        <span class="ruby-comment">#puts &quot;filM: #{@filM}&quot;</span>
-        <span class="ruby-comment">#puts &quot;colM: #{@colM}&quot;</span>
-        <span class="ruby-comment">#puts &quot;numEl: #{@numElementos}&quot;</span>
+        <span class="ruby-comment">#puts &quot;eleM: #{@eleM}&quot;</span>
+        <span class="ruby-comment">#puts &quot;filM: #{@filM}&quot;</span>
+        <span class="ruby-comment">#puts &quot;colM: #{@colM}&quot;</span>
+        <span class="ruby-comment">#puts &quot;numEl: #{@numElementos}&quot;</span>
         
         
 <span class="ruby-keyword">end</span></pre>

@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>class Object - RDoc Documentation</title>
+<title>README - RDoc Documentation</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -20,7 +20,7 @@
 <script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
 
 
-<body id="top" class="class">
+<body class="file">
 <nav id="metadata">
   <nav id="home-section" class="section">
   <h3 class="section-header">
@@ -44,56 +44,6 @@
 
 
   
-
-  <div id="file-metadata">
-    <nav id="file-list-section" class="section">
-  <h3 class="section-header">Defined In</h3>
-  <ul>
-    <li>lib/m.rb
-    <li>lib/mcd.rb
-    <li>spec/tddMatriz_spec.rb
-    <li>test/tc_matriz.rb
-  </ul>
-</nav>
-
-    
-  </div>
-
-  <div id="class-metadata">
-    
-    <nav id="parent-class-section" class="section">
-  <h3 class="section-header">Parent</h3>
-  
-  <p class="link">
-  
-</nav>
-
-    <!-- Included Modules -->
-<nav id="includes-section" class="section">
-  <h3 class="section-header">Included Modules</h3>
-
-  <ul class="link-list">
-  
-  
-    <li><a class="include" href="Matriznyj.html">Matriznyj</a>
-  
-  
-  </ul>
-</nav>
-
-    
-    <!-- Method Quickref -->
-<nav id="method-list-section" class="section">
-  <h3 class="section-header">Methods</h3>
-
-  <ul class="link-list">
-    
-    <li ><a href="#method-i-mcd">#mcd</a>
-    
-  </ul>
-</nav>
-
-  </div>
 
   <div id="project-metadata">
     <nav id="fileindex-section" class="section project-section">
@@ -147,73 +97,108 @@
   </div>
 </nav>
 
-<div id="documentation">
-  <h1 class="class">class Object</h1>
-
-  <div id="description" class="description">
-    
-  </div><!-- description -->
-
+<div id="documentation" class="description">
   
-  
-  
-  <section id="5Buntitled-5D" class="documentation-section">
-    
+<p>**************** PRÁCTICA 12 - LENGUAJES Y PARADIGMAS DE PROGRAMACIÓN
+*****************</p>
 
-    
+<p>Autores:</p>
+<ul><li>
+<p>Noelia Rodríguez Martín</p>
+</li><li>
+<p>Juan Manuel Ramos Pérez</p>
+</li></ul>
 
-    
+<p>OBJETIVO</p>
 
-    
+<p>Considere la Gema para la representación de Matrices que ha desarrollado en
+prácticas anteriores. Los objetivos de esta práctica son dos: Seguir las
+dependencias de la Gema (Gemnasium). Diseñar e implementar un Lenguaje de
+Dominio Específico (Domain Specific Language - DSL).</p>
 
-    <!-- Methods -->
-    
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Instance Methods</h3>
+<p>CLASE MATRIZ (MADRE)</p>
 
-    
-      <div id="method-i-mcd" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">mcd</span><span
-            class="method-args">(u, v)</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
+<p>Es un clase abstracta, por tanto no tiene métodos.</p>
 
-        <div class="method-description">
-          
-          <p>MAXIMO COMUN DIVISOR</p>
-          
-          
+<p>CLASE DENSA (HIJA)</p>
 
-          
-          <div class="method-source-code" id="mcd-source">
-            <pre><span class="ruby-comment"># File lib/mcd.rb, line 3</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">mcd</span>(<span class="ruby-identifier">u</span>, <span class="ruby-identifier">v</span>)
-  <span class="ruby-identifier">u</span>, <span class="ruby-identifier">v</span> = <span class="ruby-identifier">u</span>.<span class="ruby-identifier">abs</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">abs</span>
-  <span class="ruby-keyword">while</span> <span class="ruby-identifier">v</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
-    <span class="ruby-identifier">u</span>, <span class="ruby-identifier">v</span> = <span class="ruby-identifier">v</span>, <span class="ruby-identifier">u</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">v</span>
-  <span class="ruby-keyword">end</span>
-  <span class="ruby-identifier">u</span>
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- mcd-source -->
-          
-        </div>
+<p>MÉTODOS</p>
 
-        
+<p>Los métodos que se han implementado son los siguientes:</p>
 
-        
-      </div><!-- mcd-method -->
+<p>â€“ Método initialize â€“ Asignamos valores a las filas, columnas y
+argumentos. Es el constructor</p>
 
-    
-    </section><!-- public-instance-method-details -->
-  
-  </section><!-- 5Buntitled-5D -->
+<p>â€“ Método to_s(*args) â€“ Debe: mostrar la matriz</p>
 
-</div><!-- documentation -->
+<p>â€“ Método +(other) â€“ Debe: calcula la suma de dos matrices</p>
+
+<p>â€“ Método -(other) â€“ Debe: calcula la resta de dos matrices</p>
+
+<p>â€“ Método  *(other) â€“ Debe: calcula la multiplicación de dos matrices</p>
+
+<p>â€“ Método minimo â€“ Debe: calcula el número menor de todos los elementos
+de la matriz</p>
+
+<p>â€“ Método maximo â€“ Debe: calcula el número mayor de todos los elementos
+de la matriz</p>
+
+<p>CLASE DISPERSA (HIJA)</p>
+
+<p>MÉTODOS</p>
+
+<p>Los métodos que se han implementado son los siguientes:</p>
+
+<p>â€“ Método initialize â€“ Asignamos valores a las filas, columnas y
+argumentos. Es el constructor</p>
+
+<p>â€“ Método calcularFilCol(numElem) â€“ Cálcula las filas y las columnas.</p>
+
+<p>â€“ Método minimo â€“ Debe: calcula el número menor de todos los elementos
+de la matriz</p>
+
+<p>â€“ Método maximo â€“  Debe: calcula el número mayor de todos los elementos
+de la matriz</p>
+
+<p>â€“ Método to_s â€“ Debe: mostrar la matriz</p>
+
+<p>â€“ Método +(other) â€“ Debe: calcula la suma de dos matrices</p>
+
+<p>â€“ Método -(other) â€“ Debe: calcula la resta de dos matrices</p>
+
+<p>â€“ Método *(other) â€“ Debe: calcula la multiplicación de dos matrices</p>
+
+<p>CLASE FRACCIÓN</p>
+
+<p>â€“ Método coerce â€“ Debe: suma un entero con una fracción y una fracción
+con un entero y fracción con fracción.</p>
+
+<p>CLASE MATRIXDSL</p>
+
+<p>Es una clase diseñada para un lenguaje de dominio específico. Sus métodos
+sirven como puente hacia los</p>
+
+<pre>métodos reales que se encuentran en la clase matriz, tanto matriz densa como matriz dispersa.</pre>
+
+<p>Éstos actúan de forma que se pueda acceder a los métodos originales de la
+clase matriz mediante un lenguaje  sencillo.</p>
+
+<p>Métodos:</p>
+<ul><li>
+<p>operación</p>
+</li><li>
+<p>operando</p>
+</li><li>
+<p>ejecutar (permite completar la línea de código que se evaluará para llamar
+a los métodos originales)</p>
+</li></ul>
+
+<p>Las consultas a matrices que se quieran realizar se escribiran en el
+archivo matrices.rb, y para la ejecución  de dichas consultas se compilará
+el archivo m.rb.</p>
+
+</div>
+
 
 
 <footer id="validator-badges">
