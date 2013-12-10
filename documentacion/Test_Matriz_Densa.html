@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Test_Matriz_Densa - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>tc_matriz.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Test::Unit::TestCase
+  
+</nav>
+
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li ><a href="#method-i-maximo">#maximo</a>
+    
+    <li ><a href="#method-i-minimo">#minimo</a>
+    
+    <li ><a href="#method-i-test_mostrar">#test_mostrar</a>
+    
+    <li ><a href="#method-i-test_multiplicacion">#test_multiplicacion</a>
+    
+    <li ><a href="#method-i-test_resta">#test_resta</a>
+    
+    <li ><a href="#method-i-test_suma">#test_suma</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./documentacion/created_rid.html">created.rid</a>
+  
+    <li class="file"><a href="./matriznyj_rb~.html">matriznyj.rb~</a>
+  
+    <li class="file"><a href="./tddMatriz_spec_rb~.html">tddMatriz_spec.rb~</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Fraccion.html">Fraccion</a>
+  
+    <li><a href="./Matriznyj.html">Matriznyj</a>
+  
+    <li><a href="./Matriznyj/Densa.html">Matriznyj::Densa</a>
+  
+    <li><a href="./Matriznyj/Dispersa.html">Matriznyj::Dispersa</a>
+  
+    <li><a href="./Matriznyj/Matriz.html">Matriznyj::Matriz</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./Test_Matriz_Densa.html">Test_Matriz_Densa</a>
+  
+    <li><a href="./Test_Matriz_Dispersa.html">Test_Matriz_Dispersa</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Test_Matriz_Densa</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-maximo" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">maximo</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="maximo-source">
+            <pre><span class="ruby-comment"># File tc_matriz.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">maximo</span>
+        
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">10</span>, <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">10</span>,<span class="ruby-value">4</span>,<span class="ruby-value">2</span>,<span class="ruby-value">7</span>).<span class="ruby-identifier">maximo</span>)
+        
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- maximo-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- maximo-method -->
+
+    
+      <div id="method-i-minimo" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">minimo</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="minimo-source">
+            <pre><span class="ruby-comment"># File tc_matriz.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">minimo</span>
+        
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">1</span>, <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">7</span>,<span class="ruby-value">1</span>,<span class="ruby-value">8</span>).<span class="ruby-identifier">minimo</span>)
+        
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- minimo-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- minimo-method -->
+
+    
+      <div id="method-i-test_mostrar" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_mostrar</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_mostrar-source">
+            <pre><span class="ruby-comment"># File tc_matriz.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_mostrar</span>
+
+        <span class="ruby-identifier">assert</span>([[<span class="ruby-value">1</span>, <span class="ruby-value">2</span>],[<span class="ruby-value">3</span>, <span class="ruby-value">4</span>]] <span class="ruby-operator">==</span> <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>).<span class="ruby-identifier">to_s</span>(<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>))                               <span class="ruby-comment"># |</span>
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">0</span>, [[<span class="ruby-value">1</span>, <span class="ruby-value">2</span>],[<span class="ruby-value">3</span>, <span class="ruby-value">4</span>]] <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>).<span class="ruby-identifier">to_s</span>(<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>))     <span class="ruby-comment"># 3 formas distintas de hacer lo mismo</span>
+        <span class="ruby-identifier">assert_equal</span>([[<span class="ruby-value">1</span>, <span class="ruby-value">2</span>],[<span class="ruby-value">3</span>, <span class="ruby-value">4</span>]], <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>).<span class="ruby-identifier">to_s</span>(<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>))                   <span class="ruby-comment"># |</span>
+        
+        <span class="ruby-identifier">assert_equal</span>([[<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>], [<span class="ruby-value">4</span>, <span class="ruby-value">5</span>, <span class="ruby-value">6</span>], [<span class="ruby-value">7</span>, <span class="ruby-value">8</span>, <span class="ruby-value">9</span>]], <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>,<span class="ruby-value">3</span>).<span class="ruby-identifier">to_s</span>(<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>,<span class="ruby-value">5</span>,<span class="ruby-value">6</span>,<span class="ruby-value">7</span>,<span class="ruby-value">8</span>,<span class="ruby-value">9</span>))
+        
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- test_mostrar-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- test_mostrar-method -->
+
+    
+      <div id="method-i-test_multiplicacion" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_multiplicacion</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_multiplicacion-source">
+            <pre><span class="ruby-comment"># File tc_matriz.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_multiplicacion</span>
+        <span class="ruby-identifier">assert_equal</span>([[<span class="ruby-value">7</span>, <span class="ruby-value">10</span>],[<span class="ruby-value">15</span>, <span class="ruby-value">22</span>]], <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>).<span class="ruby-operator">*</span>(<span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>)))
+        <span class="ruby-identifier">assert_equal</span>([[<span class="ruby-value">30</span>, <span class="ruby-value">36</span>, <span class="ruby-value">42</span>],[<span class="ruby-value">66</span>, <span class="ruby-value">81</span>, <span class="ruby-value">96</span>], [<span class="ruby-value">102</span>, <span class="ruby-value">126</span>, <span class="ruby-value">150</span>]], <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>,<span class="ruby-value">3</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>,<span class="ruby-value">5</span>,<span class="ruby-value">6</span>,<span class="ruby-value">7</span>,<span class="ruby-value">8</span>,<span class="ruby-value">9</span>).<span class="ruby-operator">*</span>(<span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>,<span class="ruby-value">3</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>,<span class="ruby-value">5</span>,<span class="ruby-value">6</span>,<span class="ruby-value">7</span>,<span class="ruby-value">8</span>,<span class="ruby-value">9</span>)))
+        
+        <span class="ruby-identifier">assert_equal</span>([[<span class="ruby-value">6</span>, <span class="ruby-value">6</span>],[<span class="ruby-value">14</span>, <span class="ruby-value">14</span>]], <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>).<span class="ruby-operator">*</span>(<span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">2</span>)))
+        <span class="ruby-identifier">assert_equal</span>([[<span class="ruby-value">4</span>, <span class="ruby-value">2</span>, <span class="ruby-value">4</span>],[<span class="ruby-value">10</span>, <span class="ruby-value">5</span>, <span class="ruby-value">10</span>], [<span class="ruby-value">16</span>, <span class="ruby-value">8</span>, <span class="ruby-value">16</span>]], <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>,<span class="ruby-value">3</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>,<span class="ruby-value">5</span>,<span class="ruby-value">6</span>,<span class="ruby-value">7</span>,<span class="ruby-value">8</span>,<span class="ruby-value">9</span>).<span class="ruby-operator">*</span>(<span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>,<span class="ruby-value">3</span>,<span class="ruby-value">1</span>,<span class="ruby-value">0</span>,<span class="ruby-value">1</span>,<span class="ruby-value">0</span>,<span class="ruby-value">1</span>,<span class="ruby-value">0</span>,<span class="ruby-value">1</span>,<span class="ruby-value">0</span>,<span class="ruby-value">1</span>)))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- test_multiplicacion-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- test_multiplicacion-method -->
+
+    
+      <div id="method-i-test_resta" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_resta</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_resta-source">
+            <pre><span class="ruby-comment"># File tc_matriz.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_resta</span>
+        <span class="ruby-identifier">assert_equal</span>([[<span class="ruby-value">0</span>, <span class="ruby-value">0</span>],[<span class="ruby-value">0</span>, <span class="ruby-value">0</span>]], <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>).<span class="ruby-operator">-</span>(<span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>)))
+        <span class="ruby-identifier">assert_equal</span>([[<span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>],[<span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>], [<span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>]], <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>,<span class="ruby-value">3</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>,<span class="ruby-value">5</span>,<span class="ruby-value">6</span>,<span class="ruby-value">7</span>,<span class="ruby-value">8</span>,<span class="ruby-value">9</span>).<span class="ruby-operator">-</span>(<span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>,<span class="ruby-value">3</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>,<span class="ruby-value">5</span>,<span class="ruby-value">6</span>,<span class="ruby-value">7</span>,<span class="ruby-value">8</span>,<span class="ruby-value">9</span>)))
+        
+        <span class="ruby-identifier">assert_equal</span>([[<span class="ruby-value">0</span>, <span class="ruby-value">1</span>],[<span class="ruby-value">2</span>, <span class="ruby-value">3</span>]], <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>).<span class="ruby-operator">-</span>(<span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>)))
+        <span class="ruby-identifier">assert_equal</span>([[<span class="ruby-value">0</span>, <span class="ruby-value">1</span>, <span class="ruby-value">2</span>],[<span class="ruby-value">3</span>, <span class="ruby-value">4</span>, <span class="ruby-value">5</span>], [<span class="ruby-value">6</span>, <span class="ruby-value">7</span>, <span class="ruby-value">8</span>]], <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>,<span class="ruby-value">3</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>,<span class="ruby-value">5</span>,<span class="ruby-value">6</span>,<span class="ruby-value">7</span>,<span class="ruby-value">8</span>,<span class="ruby-value">9</span>).<span class="ruby-operator">-</span>(<span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>,<span class="ruby-value">3</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>)))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- test_resta-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- test_resta-method -->
+
+    
+      <div id="method-i-test_suma" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_suma</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_suma-source">
+            <pre><span class="ruby-comment"># File tc_matriz.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_suma</span>
+        <span class="ruby-identifier">assert_equal</span>([[<span class="ruby-value">2</span>, <span class="ruby-value">4</span>],[<span class="ruby-value">6</span>, <span class="ruby-value">8</span>]], <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>).<span class="ruby-operator">+</span>(<span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>)))
+        <span class="ruby-identifier">assert_equal</span>([[<span class="ruby-value">2</span>, <span class="ruby-value">4</span>, <span class="ruby-value">6</span>],[<span class="ruby-value">8</span>, <span class="ruby-value">10</span>, <span class="ruby-value">12</span>], [<span class="ruby-value">14</span>, <span class="ruby-value">16</span>, <span class="ruby-value">18</span>]], <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>,<span class="ruby-value">3</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>,<span class="ruby-value">5</span>,<span class="ruby-value">6</span>,<span class="ruby-value">7</span>,<span class="ruby-value">8</span>,<span class="ruby-value">9</span>).<span class="ruby-operator">+</span>(<span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>,<span class="ruby-value">3</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>,<span class="ruby-value">5</span>,<span class="ruby-value">6</span>,<span class="ruby-value">7</span>,<span class="ruby-value">8</span>,<span class="ruby-value">9</span>)))
+        
+        <span class="ruby-identifier">assert_equal</span>([[<span class="ruby-value">2</span>, <span class="ruby-value">3</span>],[<span class="ruby-value">4</span>, <span class="ruby-value">5</span>]], <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>).<span class="ruby-operator">+</span>(<span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>)))
+        <span class="ruby-identifier">assert_equal</span>([[<span class="ruby-value">2</span>, <span class="ruby-value">3</span>, <span class="ruby-value">4</span>],[<span class="ruby-value">5</span>, <span class="ruby-value">6</span>, <span class="ruby-value">7</span>], [<span class="ruby-value">8</span>, <span class="ruby-value">9</span>, <span class="ruby-value">10</span>]], <span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>,<span class="ruby-value">3</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>,<span class="ruby-value">5</span>,<span class="ruby-value">6</span>,<span class="ruby-value">7</span>,<span class="ruby-value">8</span>,<span class="ruby-value">9</span>).<span class="ruby-operator">+</span>(<span class="ruby-constant">Densa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>,<span class="ruby-value">3</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>)))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- test_suma-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- test_suma-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.1.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

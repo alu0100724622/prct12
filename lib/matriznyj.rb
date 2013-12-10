@@ -12,7 +12,7 @@ require "./fraccion.rb"
 #
 # - *rdoc*
 
-#module Matriznyj
+module Matriznyj
 
 
 # CLASE MATRIZ (ABSTRACTA)
@@ -527,7 +527,7 @@ end
 
 class MatrixDSL
 
-	attr_accessor :matrix1, :matrix2
+	attr_accessor :matrix1, :matrix2, :vis
 
 	def initialize(op1, op2)
 		
@@ -568,8 +568,14 @@ class MatrixDSL
 		
 		if(@matrix1 == "0")
 			@matrix1 = elementos
+			
+			@vis = other.to_s << " " << @oper.to_s << " "
+			
 		else
 			@matrix2 = elementos
+			
+			@vis = @vis << other.to_s << " = "
+			
 		end
 		
 		
@@ -582,16 +588,22 @@ class MatrixDSL
 		
 		if(@matrix1 != "0" && @matrix2 == "0")
 			@matrix1 = @opcion1.to_s << ".new(" << @fil.to_s << "," << @col.to_s << "," << @matrix1.to_s << ")"
-			puts "matriz 1: #{@matrix1}"
+			#puts "matriz 1: #{@matrix1}"
 		end
 		
 		if(@matrix1 != "0" && @matrix2 != "0")
 			@matrix2 = @opcion2.to_s << ".new(" << @fil.to_s << "," << @col.to_s << "," << @matrix2.to_s << ")"
-			puts "matriz 2: #{@matrix2}"
+			#puts "matriz 2: #{@matrix2}"
 			
 			resultado = @matrix1.to_s << "." << @oper.to_s << "(" << @matrix2.to_s << ")"
 			resultado = Array.new(eval(resultado))
-			puts "resultado: #{resultado}"
+			#puts "resultado: #{resultado}"
+			
+			
+			@vis = @vis << resultado.to_s
+			puts "----------------------------------------------------"
+			puts @vis			
+			
 		end
 		
 	end
@@ -599,7 +611,7 @@ class MatrixDSL
 
 end
 
-#end		# -module Matriznyj-
+end		# -module Matriznyj-
 
 
 

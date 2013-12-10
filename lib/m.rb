@@ -1,9 +1,9 @@
 
 require './matriznyj.rb'
+include Matriznyj
 
 consulta =  File.open("./matrices.rb").read
-
-matrixdsl =  eval(consulta)
+eval(consulta)
 
 
 
